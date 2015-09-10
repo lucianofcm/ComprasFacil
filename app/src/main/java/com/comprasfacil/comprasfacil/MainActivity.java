@@ -5,18 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -25,6 +20,7 @@ public class MainActivity extends AppCompatActivity
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
     private NavigationDrawerFragment mNavigationDrawerFragment;
+
 
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
@@ -38,32 +34,61 @@ public class MainActivity extends AppCompatActivity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+
         mTitle = getTitle();
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+
+
     }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
+
+        Fragment fragment= null;
+
+        switch (position) {
+            case 0:
+                mTitle = getString(R.string.listas_compras);
+                fragment = new ListaComprasFragment();
+
+                break;
+            case 1:
+
+                mTitle = getString(R.string.lista_padrao_secao);
+                fragment =new HistoricoComprasFragment();
+
+                break;
+            case 2:
+                mTitle = getString(R.string.title_section3);
+                fragment = new ListaComprasFragment();
+
+                break;
+        }
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                .replace(R.id.container,fragment)
                 .commit();
-    }
+ }
 
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
-                mTitle = getString(R.string.title_section1);
+
+                mTitle = getString(R.string.historico_compras_secao);
                 break;
             case 2:
-                mTitle = getString(R.string.title_section2);
+
+                mTitle = getString(R.string.lista_padrao_secao);
                 break;
             case 3:
+
                 mTitle = getString(R.string.title_section3);
                 break;
         }

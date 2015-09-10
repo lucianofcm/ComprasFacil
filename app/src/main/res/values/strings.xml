@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">ComprasFacil</string>
-    <string name="title_section1">Histórico Compras</string>
-    <string name="title_section2">Lista Padrão</string>
+    <string name="listas_compras">Listas de Compras</string>
+    <string name="historico_compras_secao">Histórico Compras</string>
+    <string name="lista_padrao_secao">Lista Padrão</string>
     <string name="title_section3">Produtos</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
+    <string name="hello_blank_fragment">Hello</string>
 </resources>

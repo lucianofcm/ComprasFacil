@@ -16,16 +16,30 @@
          android:layout_gravity="left" instead. -->
     <!-- The drawer is given a fixed width in dp and extends the full height of
          the container. -->
+
+
+
     <fragment android:id="@+id/navigation_drawer"
         android:layout_width="@dimen/navigation_drawer_width" android:layout_height="match_parent"
         android:layout_gravity="start"
         android:name="com.comprasfacil.comprasfacil.NavigationDrawerFragment"
         tools:layout="@layout/fragment_navigation_drawer" />
 
-    <fragment android:id="@+id/lista_compras_fragment"
+    <fragment android:id="@+id/compras_drawer"
         android:layout_width="@dimen/navigation_drawer_width" android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:name="com.comprasfacil.comprasfacil.NavigationDrawerFragment"
+        android:name="com.comprasfacil.comprasfacil.ListaComprasFragment"
         tools:layout="@layout/fragment_lista_compras" />
+
+    <fragment android:id="@+id/historico_drawer"
+        android:layout_width="@dimen/navigation_drawer_width" android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:name="com.comprasfacil.comprasfacil.HistoricoComprasFragment"
+        tools:layout="@layout/fragment_historico_compras" />
+    <fragment android:id="@+id/main_fragment"
+        android:layout_width="@dimen/navigation_drawer_width" android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:name="com.comprasfacil.comprasfacil.InicialFragment"
+        tools:layout="@layout/fragment_main" />
 
 </android.support.v4.widget.DrawerLayout>
