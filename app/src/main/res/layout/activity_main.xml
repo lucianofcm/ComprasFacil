@@ -22,4 +22,10 @@
         android:name="com.comprasfacil.comprasfacil.NavigationDrawerFragment"
         tools:layout="@layout/fragment_navigation_drawer" />
 
+    <fragment android:id="@+id/listaComprasFragment"
+        android:layout_width="@dimen/navigation_drawer_width" android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:name="com.comprasfacil.comprasfacil.NavigationDrawerFragment"
+        tools:layout="@layout/fragment_lista_compras" />
+
 </android.support.v4.widget.DrawerLayout>
