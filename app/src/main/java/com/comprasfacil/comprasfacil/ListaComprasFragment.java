@@ -9,21 +9,40 @@ import android.support.v7.internal.widget.DialogTitle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
 
 public class ListaComprasFragment extends Fragment {
-    private long workoutId;
-    private CharSequence mTitle;
+
     View myView;
+    ListView mDrawerListView;
+    private ArrayAdapter arrayAdapter;
+    private String[] monthsArray = { "COMPRA 1", "COMPRA 2", "COMPRA 3", "COMPRA 4", "COMPRA 5", "COMPRA6", "COMPRA7",
+            "COMPRA 8", "COMPRA 9", "COMPRA 10", "COMPRA 11", "COMPRA 12" };
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
+
+        //mDrawerListView = (ListView) inflater.inflate(R.layout.fragment_lista_compras, container, false);
         myView = inflater.inflate(R.layout.fragment_lista_compras, container, false);
 
-        return myView;
+        mDrawerListView = (ListView)myView.findViewById(R.id.lvListaCompras);
+        arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_expandable_list_item_1, monthsArray);
+        mDrawerListView.setAdapter(arrayAdapter);
+
+        return mDrawerListView;
+        
+        //myView = inflater.inflate(R.layout.fragment_lista_compras, container, false);
+
+        //return myView;
     }
 
 }
