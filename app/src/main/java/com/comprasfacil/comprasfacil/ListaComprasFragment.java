@@ -14,7 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 
 public class ListaComprasFragment extends Fragment {
@@ -44,7 +44,7 @@ public class ListaComprasFragment extends Fragment {
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-               clicaItemLista(view,position,id);
+              Toast.makeText(getContext(),"Clique na posicao"+position, Toast.LENGTH_SHORT).show();
            }
        });
 
