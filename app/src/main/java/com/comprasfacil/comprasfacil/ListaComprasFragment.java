@@ -1,6 +1,7 @@
 package com.comprasfacil.comprasfacil;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -38,11 +39,33 @@ public class ListaComprasFragment extends Fragment {
         arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_expandable_list_item_1, monthsArray);
         mDrawerListView.setAdapter(arrayAdapter);
 
+
+       mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+           @Override
+           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+               clicaItemLista(view,position,id);
+           }
+       });
+
+
         return mDrawerListView;
-        
+
         //myView = inflater.inflate(R.layout.fragment_lista_compras, container, false);
 
         //return myView;
-    }
+
+
+
+
+}
+
+
+    public void clicaItemLista(View view,int position,long id){
+
+       System.out.println("Lista pressionada "+position+" "+ id);
+
+            }
+
 
 }
